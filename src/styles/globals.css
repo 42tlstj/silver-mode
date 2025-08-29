@@ -1,0 +1,189 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 18px; /* 접근성: 최소 18px */
+  --background: #ffffff;
+  --foreground: #000000; /* 고대비 */
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #1e293b;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --accent: #e2e8f0;
+  --accent-foreground: #1e293b;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: transparent;
+  --input-background: #f8fafc;
+  --switch-background: #cbd5e1;
+  --font-weight-medium: 600; /* 더 두껍게 */
+  --font-weight-normal: 500;
+  --ring: #2563eb;
+  --radius: 0.75rem;
+  
+  /* 질환별 테마 색상 */
+  --parkinson-primary: #16a34a; /* 녹색 - 안정감 */
+  --diabetes-primary: #dc2626; /* 빨간색 - 혈당 관련 */
+  --cataract-primary: #0f172a; /* 고대비 검정 */
+  --dementia-primary: #7c3aed; /* 보라색 - 차분함 */
+  
+  --parkinson-bg: #f0fdf4;
+  --diabetes-bg: #fef2f2;
+  --cataract-bg: #ffffff;
+  --dementia-bg: #faf5ff;
+}
+
+/* 파킨슨 테마 */
+.theme-parkinson {
+  --primary: var(--parkinson-primary);
+  --background: var(--parkinson-bg);
+  --accent: #dcfce7;
+}
+
+/* 당뇨 테마 */
+.theme-diabetes {
+  --primary: var(--diabetes-primary);
+  --background: var(--diabetes-bg);
+  --accent: #fee2e2;
+}
+
+/* 백내장 테마 */
+.theme-cataract {
+  --primary: var(--cataract-primary);
+  --background: var(--cataract-bg);
+  --accent: #f1f5f9;
+  --foreground: #000000; /* 최대 대비 */
+}
+
+/* 치매 테마 */
+.theme-dementia {
+  --primary: var(--dementia-primary);
+  --background: var(--dementia-bg);
+  --accent: #f3e8ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-size: 18px; /* 기본 폰트 크기 */
+    line-height: 1.6; /* 가독성 향상 */
+  }
+}
+
+/**
+ * 접근성 향상된 타이포그래피
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 2rem; /* 32px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h2 {
+      font-size: 1.5rem; /* 24px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h3 {
+      font-size: 1.25rem; /* 20px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h4 {
+      font-size: 1.125rem; /* 18px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    p {
+      font-size: 1.125rem; /* 18px */
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+    }
+
+    label {
+      font-size: 1.125rem; /* 18px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    button {
+      font-size: 1.125rem; /* 18px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      min-height: 48px; /* 접근성: 최소 터치 영역 */
+    }
+
+    input {
+      font-size: 1.125rem; /* 18px */
+      font-weight: var(--font-weight-normal);
+      line-height: 1.4;
+      min-height: 48px;
+    }
+  }
+}
+
+/* 접근성 유틸리티 클래스 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 큰 터치 영역 */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+html {
+  font-size: var(--font-size);
+}

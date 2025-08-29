@@ -1,0 +1,3 @@
+// 개발용 기본값 - 실제 배포 시에는 환경변수로 설정
+export const projectId = import.meta.env?.VITE_SUPABASE_PROJECT_ID || 'kqxxypwsbphcadmmupir'
+export const publicAnonKey = import.meta.env?.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxeHh5cHdzYnBoY2FkbW11cGlyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA3OTczOTQsImV4cCI6MjA0NjM3MzM5NH0.sFzm5gp5rpkX7NwJxEJxOcpJDXmVLlR2vBk7ovGV9bc'

@@ -1,0 +1,188 @@
+/**
+ * 01_Tokens: 은평구 고령층 실버모드 디자인 토큰
+ * 목적: 접근성과 질환별 맞춤 디자인을 위한 토큰 시스템
+ */
+
+:root {
+  /* === Color Tokens === */
+  /* Primary Colors */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6; /* Main Primary */
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+
+  /* Secondary Colors */
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #f1f5f9;
+  --color-secondary-200: #e2e8f0;
+  --color-secondary-300: #cbd5e1;
+  --color-secondary-400: #94a3b8;
+  --color-secondary-500: #64748b;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;
+  --color-secondary-800: #1e293b;
+  --color-secondary-900: #0f172a;
+
+  /* Semantic Colors */
+  --color-success-light: #dcfce7;
+  --color-success: #16a34a;
+  --color-success-dark: #14532d;
+  
+  --color-warning-light: #fef3c7;
+  --color-warning: #f59e0b;
+  --color-warning-dark: #92400e;
+  
+  --color-danger-light: #fee2e2;
+  --color-danger: #dc2626;
+  --color-danger-dark: #991b1b;
+
+  /* Background & Surface Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-surface-sunken: #f1f5f9;
+
+  /* Text Colors (4.5:1 contrast minimum) */
+  --color-text-primary: #000000; /* 21:1 contrast */
+  --color-text-secondary: #374151; /* 9.2:1 contrast */
+  --color-text-tertiary: #6b7280; /* 4.6:1 contrast */
+  --color-text-disabled: #9ca3af;
+
+  /* Border Colors */
+  --color-border-primary: #d1d5db;
+  --color-border-secondary: #e5e7eb;
+  --color-border-focus: var(--color-primary-500);
+
+  /* === Disease-Specific Color Variants === */
+  /* 파킨슨병 - 녹색 계열 (안정감) */
+  --parkinson-primary: #059669;
+  --parkinson-primary-light: #d1fae5;
+  --parkinson-bg: #f0fdf4;
+  --parkinson-accent: #10b981;
+
+  /* 당뇨병 - 빨간색 계열 (주의) */
+  --diabetes-primary: #dc2626;
+  --diabetes-primary-light: #fecaca;
+  --diabetes-bg: #fef2f2;
+  --diabetes-accent: #ef4444;
+
+  /* 백내장 - 고대비 검정 계열 */
+  --cataract-primary: #000000;
+  --cataract-primary-light: #f3f4f6;
+  --cataract-bg: #ffffff;
+  --cataract-accent: #374151;
+
+  /* 치매 - 보라색 계열 (차분함) */
+  --dementia-primary: #7c3aed;
+  --dementia-primary-light: #ede9fe;
+  --dementia-bg: #faf5ff;
+  --dementia-accent: #8b5cf6;
+
+  /* === Typography Tokens === */
+  /* Font Sizes (접근성 기준) */
+  --font-size-xs: 14px;
+  --font-size-sm: 16px;
+  --font-size-base: 18px; /* 기본 본문 */
+  --font-size-lg: 20px;
+  --font-size-xl: 22px; /* Large body option */
+  --font-size-2xl: 24px; /* H2 */
+  --font-size-3xl: 28px; /* Large text option */
+  --font-size-4xl: 32px; /* H1 */
+  --font-size-5xl: 36px;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* === Spacing Tokens (8pt grid) === */
+  --space-1: 4px;   /* 0.5 unit */
+  --space-2: 8px;   /* 1 unit */
+  --space-3: 12px;  /* 1.5 unit */
+  --space-4: 16px;  /* 2 unit */
+  --space-5: 20px;  /* 2.5 unit */
+  --space-6: 24px;  /* 3 unit */
+  --space-8: 32px;  /* 4 unit */
+  --space-10: 40px; /* 5 unit */
+  --space-12: 48px; /* 6 unit */
+  --space-16: 64px; /* 8 unit */
+  --space-20: 80px; /* 10 unit */
+  --space-24: 96px; /* 12 unit */
+
+  /* === Border Radius Tokens === */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* === Elevation/Shadow Tokens === */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* === Touch Target Tokens === */
+  --touch-target-sm: 44px;
+  --touch-target-md: 48px; /* WCAG 최소 기준 */
+  --touch-target-lg: 56px;
+  --touch-target-xl: 60px; /* 파킨슨병용 */
+
+  /* === Animation Tokens === */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+  --duration-senior: 450ms; /* 실버모드용 */
+  --duration-accessibility: 600ms; /* 접근성 모드용 */
+
+  --easing-linear: linear;
+  --easing-ease: ease;
+  --easing-ease-in: ease-in;
+  --easing-ease-out: ease-out;
+  --easing-ease-in-out: ease-in-out;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-primary: #000000;
+    --color-text-secondary: #000000;
+    --color-border-primary: #000000;
+    --color-primary-500: #0000ff;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --duration-senior: 0ms;
+    --duration-accessibility: 0ms;
+  }
+}
+
+/* Large Text Preference */
+@media (prefers-reduced-data: reduce) {
+  :root {
+    --font-size-base: 20px;
+    --font-size-lg: 22px;
+    --font-size-xl: 24px;
+  }
+}
